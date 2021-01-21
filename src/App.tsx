@@ -6,8 +6,6 @@ import AppRouter from "components/AppRouter";
 import history from "settings/history";
 import ChakraTheme from "settings/theme/ChakraTheme";
 
-import "./index.css";
-
 export default function App(): JSX.Element {
   return (
     <ChakraProvider theme={ChakraTheme}>
