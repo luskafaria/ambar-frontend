@@ -1,26 +1,20 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React from "react";
+import { Router } from "react-router-dom";
+import { ThemeProvider as ChakraProvider, CSSReset } from "@chakra-ui/react";
 
-function App() {
+import AppRouter from "components/AppRouter";
+import history from "settings/history";
+import ChakraTheme from "settings/theme/ChakraTheme";
+
+import "./index.css";
+
+export default function App(): JSX.Element {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <ChakraProvider theme={ChakraTheme}>
+      <CSSReset />
+      <Router history={history}>
+        <AppRouter />
+      </Router>
+    </ChakraProvider>
   );
 }
-
-export default App;
