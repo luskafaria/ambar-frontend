@@ -2,6 +2,3 @@
 node_modules/
 documentation/
 build/
-
-# GraphQL Codegen
-src/generated/graphql
