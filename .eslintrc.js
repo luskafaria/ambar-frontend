@@ -4,6 +4,10 @@ module.exports = {
     "@jungsoft/eslint-config/typescript",
     "plugin:@typescript-eslint/recommended",
   ],
+  rules: {
+    camelcase: "off",
+    "@typescript-eslint/camelcase": "off",
+  },
   settings: {
     "import/resolver": {
       typescript: {},
