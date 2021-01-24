@@ -7,44 +7,48 @@ const Temperature: React.FC<TemperatureProps> = ({
   title,
   city,
   temperature,
-}) => (
-  <VStack spacing={2}>
+}) => {
+  const parsedTemperature = temperature && Math.round(temperature);
 
-    {
-      city ? (
-        <Text
-          color="white"
-          fontSize={16}
-          textTransform="capitalize"
-        >
-          {`${title}: `}
+  return (
+    <VStack spacing={2}>
+
+      {
+        city ? (
           <Text
-            as="span"
-            fontWeight="500"
-            fontSize="18px"
+            color="white"
+            fontSize={16}
+            textTransform="capitalize"
           >
-            {city}
+            {`${title}: `}
+            <Text
+              as="span"
+              fontWeight="500"
+              fontSize="18px"
+            >
+              {city}
+            </Text>
           </Text>
-        </Text>
-      ) : (
-        <Text
-          color="white"
-          fontSize={16}
-          textTransform="capitalize"
-        >
-          {`${title}:`}
-        </Text>
-      )
-    }
+        ) : (
+          <Text
+            color="white"
+            fontSize={16}
+            textTransform="capitalize"
+          >
+            {`${title}:`}
+          </Text>
+        )
+      }
 
-    <Text
-      color="white"
-      fontWeight="500"
-      fontSize={32}
-    >
-      {`${temperature}°C`}
-    </Text>
-  </VStack>
-);
+      <Text
+        color="white"
+        fontWeight="500"
+        fontSize={32}
+      >
+        {`${parsedTemperature}°C`}
+      </Text>
+    </VStack>
+  );
+};
 
 export default Temperature;
