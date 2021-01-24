@@ -6,11 +6,11 @@ Access [https://ambar-frontend.vercel.app/](https://ambar-frontend.vercel.app/)
 
 This project is responsive;
 
-![Responsiveness](https://gph.is/g/E3Lk11n)
+![Responsiveness](https://gph.is/g/E3Lk11n.gif)
 
 The background changes based on day time;
 
-![Background](https://gph.is/g/ZO0dOQL)
+![Background](https://gph.is/g/ZO0dOQL.gif)
 
 ## Available Scripts
 
