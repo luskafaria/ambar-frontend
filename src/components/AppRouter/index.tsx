@@ -1,9 +1,8 @@
 import React from "react";
 import { Route, Switch } from "react-router-dom";
 
-import RouteContainer from "contexts/route/RouteContainer";
-import AppWrapper from "components/AppWrapper";
 import appRoutes from "routes/appRoutes";
+import AppWrapper from "components/AppWrapper";
 import NotFound from "views/NotFound";
 
 const AppRouter: React.FC = () => (
@@ -19,16 +18,18 @@ const AppRouter: React.FC = () => (
             path={routeProps?.path}
             key={routeProps?.path}
           >
-            <RouteContainer routeProps={routeProps}>
-              <AppWrapper>
-                <Component />
-              </AppWrapper>
-            </RouteContainer>
+            <AppWrapper>
+              <Component />
+            </AppWrapper>
           </Route>
         );
       })
     }
-    <Route component={NotFound} />
+    <Route>
+      <AppWrapper>
+        <NotFound />
+      </AppWrapper>
+    </Route>
   </Switch>
 );
 

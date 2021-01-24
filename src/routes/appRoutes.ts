@@ -1,31 +1,27 @@
 import Home from "views/Home";
-import { RouteProps } from "contexts/route/types";
-import { ROOT_PAGE_PATH } from "routes";
+import { MAXMIN_PAGE_PATH, ROOT_PAGE_PATH } from "routes";
+import MaxMin from "views/MaxMin";
+
+import { RouteProps } from "./types";
 
 const defaultRouteProps = {
   exact: true,
   strict: false,
   requireAuthentication: true,
-  showHeader: true,
-  showFooter: true,
   componentProps: {},
 };
 
 const appRoutes: RouteProps[] = [
   {
     ...defaultRouteProps,
-    showHeader: false,
-    showFooter: false,
     path: ROOT_PAGE_PATH,
     component: Home,
   },
+  {
+    ...defaultRouteProps,
+    path: MAXMIN_PAGE_PATH,
+    component: MaxMin,
+  },
 ];
-
-/**
- * Public paths that can be accessed without a session.
- */
-export const publicPaths = appRoutes
-  .filter((route) => !route?.requireAuthentication)
-  .map((route) => route.path);
 
 export default appRoutes;

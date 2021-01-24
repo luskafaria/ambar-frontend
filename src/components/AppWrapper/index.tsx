@@ -1,43 +1,43 @@
-import React from "react";
+import React, { useEffect, useMemo, useRef } from "react";
 import { Flex } from "@chakra-ui/react";
 
-import { useRouteProps } from "contexts/route";
-import Header from "components/Header";
-import Footer from "components/Footer";
+import getBackgroundDayTime from "utils/getBackgroundByTime";
 
-/**
- * App wrapper. Can be used to render Header, Footer, etc.
- * @param param0 options
- */
 const AppWrapper: React.FC = ({
   children,
 }) => {
-  const {
-    showHeader,
-    showFooter,
-  } = useRouteProps();
+  const containerRef = useRef<HTMLDivElement>(null);
+
+  const hour = new Date().getHours();
+
+  const bgUrl = useMemo((): string => getBackgroundDayTime(hour), [
+    hour,
+  ]);
+
+  useEffect(() => {
+    if (!containerRef.current) {
+      return;
+    }
+
+    containerRef.current.style.backgroundImage = bgUrl;
+  }, [bgUrl]);
 
   return (
     <Flex
-      display="block"
-      minHeight="100vh"
-      backgroundColor="background"
+      ref={containerRef}
       className="app-wrapper"
+      display="flex"
+      minHeight="100vh"
+      alignItems="center"
+      justifyContent="center"
+      bgColor="background"
+      bgClip="border-box"
+      bgPosition="center"
+      bgAttachment="fixed"
+      bgRepeat="no-repeat"
+      bgSize="cover"
     >
-
-      {
-        showHeader && (
-          <Header />
-        )
-      }
-
       {children}
-
-      {
-        showFooter && (
-          <Footer />
-        )
-      }
     </Flex>
   );
 };
