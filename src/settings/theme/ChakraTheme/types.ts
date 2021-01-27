@@ -13,10 +13,7 @@ export type ColorHues = {
   "900": string;
 };
 
-export type ThemeFonts = ChakraThemeProps["fonts"] & {
-  semibold: string;
-  light: string;
-}
+export type ThemeFonts = ChakraThemeProps["fonts"];
 
 export type ThemeSizes = ChakraThemeProps["sizes"] & {
   xxs: string;

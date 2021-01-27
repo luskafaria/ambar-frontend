@@ -19,12 +19,14 @@ const Temperature: React.FC<TemperatureProps> = ({
             color="white"
             fontSize={16}
             textTransform="capitalize"
+            fontFamily="body"
           >
             {`${title}: `}
             <Text
               as="span"
               fontWeight="500"
               fontSize="18px"
+              fontFamily="body"
             >
               {city}
             </Text>
@@ -34,6 +36,7 @@ const Temperature: React.FC<TemperatureProps> = ({
             color="white"
             fontSize={16}
             textTransform="capitalize"
+            fontFamily="body"
           >
             {`${title}:`}
           </Text>
@@ -44,6 +47,7 @@ const Temperature: React.FC<TemperatureProps> = ({
         color="white"
         fontWeight="500"
         fontSize={32}
+        fontFamily="body"
       >
         {`${parsedTemperature}°C`}
       </Text>

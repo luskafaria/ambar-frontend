@@ -28,11 +28,21 @@ const Weather: React.FC<WeatherProps> = ({
         spacing={8}
       >
         <HStack spacing={3}>
-          <Text color="white" fontSize={{ sm: "32px" }} fontWeight="500">
+          <Text
+            color="white"
+            fontSize={{ sm: "32px" }}
+            fontWeight="500"
+            fontFamily="body"
+          >
             Cidade:
           </Text>
 
-          <Text color="white" fontSize={{ sm: "40px" }} fontWeight="500">
+          <Text
+            color="white"
+            fontSize={{ sm: "40px" }}
+            fontWeight="500"
+            fontFamily="body"
+          >
             {cityWeatherData?.name}
           </Text>
         </HStack>
@@ -41,9 +51,20 @@ const Weather: React.FC<WeatherProps> = ({
           justifyContent="center"
           alignItems="center"
         >
-          <Image src={iconUrl} width="50px" height="50px" />
+          <Image
+            src={iconUrl}
+            width="50px"
+            height="50px"
+          />
 
-          <Text textTransform="capitalize" fontSize="32px" fontWeight="500" color="white">
+          <Text
+            textTransform="capitalize"
+            fontSize="32px"
+            fontWeight="500"
+            color="white"
+            fontFamily="body"
+          >
+
             {cityWeatherData?.current?.weather[0]?.description}
           </Text>
         </HStack>

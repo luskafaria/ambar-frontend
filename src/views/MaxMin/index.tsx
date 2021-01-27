@@ -43,7 +43,10 @@ const MaxMin: React.FC = () => {
         temperature={minCity?.daily[0]?.temp?.min}
       />
 
-      <Button onClick={navigate(ROOT_PAGE_PATH)}>
+      <Button
+        onClick={navigate(ROOT_PAGE_PATH)}
+        fontFamily="body"
+      >
         Voltar
       </Button>
     </Display>

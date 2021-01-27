@@ -19,7 +19,7 @@ const ButtonsContainer: React.FC<ButtonsContainerProps> = ({
           onClick={() => onClick(city)}
           type="button"
         >
-          <Text>{city.name}</Text>
+          <Text fontFamily="body">{city.name}</Text>
         </Button>
       ))
     }
